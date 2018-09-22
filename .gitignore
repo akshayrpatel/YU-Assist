@@ -1,0 +1,23 @@
+# Node
+npm-debug.log
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# General
+log/
+*.log
+
+#files
+functions/config.js
+functions/utils/loginUtil.js
+functions/utils/cookiesUtil.js
+functions/utils/tokens.json
+functions/tokens.json
+
+#folders
+functions/test
+functions/node_modules
