@@ -1,6 +1,6 @@
 # YU-Assist
 
-## An app on the google assistant to help York University students find information like GPA, courses enrolled quickly using voice-recognition.
+## An app on the google assistant to help York University students find information like GPA, courses enrolled, etc. quickly using voice-recognition.
 
 ## Motivation
 During the beginnning of a semester, I check course timetables, professors, my OSAP status, GPA etc. quite often.  
@@ -8,7 +8,7 @@ Every time I check one of the above, I have to navigate through a couple web pag
 I want to be able to access all of my school information as quickly as possible.
 
 ## Google Assistant
-What better way to get access to your information than using your personal assistant (OK Google)
+What better way to access to your information than using your personal assistant (OK Google!)
 
 ## Steps
 Firstly, I trained an agent on Dialogflow (end to end suite for building conversational interfaces) to take user inputs.  
