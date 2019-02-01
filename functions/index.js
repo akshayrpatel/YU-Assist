@@ -3,6 +3,7 @@ const loginUtil = require('./utils/loginUtil')
 const fetchUtil = require('./utils/fetchUtil')
 const parserUtil = require('./utils/parserUtil')
 const gpaUtil = require('./utils/gpaUtil')
+const testUtil = require('./utils/testUtil')
 const config = require('./config')
 
 const express = require('express')
@@ -20,20 +21,20 @@ eapp.get('/getSchedule', async(req, res) => {
         console.log(error)
         res.send(error);
    }
-
 })
 
 eapp.get('/getGrades', async(req, res) => {
     try {
         const options = await loginUtil.loginUser();
         const gradesPage = await fetchUtil.getPage(options);
+        // res.send(gradesPage);
         const grades = await parserUtil.gradePageParser(gradesPage);
         res.send(grades);
    }
     catch(error) {
-        res.send('Failed!');
+        res.send(error)
+        // res.send('Failed!');
    }
-
 })
 
 eapp.get('/getCGPA', async (req, res) => {    
@@ -60,7 +61,24 @@ eapp.get('/getCGPA', async (req, res) => {
         res.send(error)
     }
 })
-    
+  
+
+eapp.get('/test', async (req, res) => {
+    try {
+        console.log('Testing module');
+        const page = await testUtil.getTestPage();
+        res.send(page);
+    }
+    catch(error) {
+        res.send(error)
+        // res.send('Failed!');
+    }
+})
+
+
+
+// ******Dialogflow code*********************************
+
 // const {dialogflow, SimpleResponse} = require('actions-on-google');
 // const app = dialogflow({debug: true});
 // app.intent('tell_gpa', async (conv) => {
